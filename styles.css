@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Makes sure the container takes full height of the viewport */
+}
+
+.header, .footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.content-area {
+  display: flex;
+  flex: 1; /* Makes the content area grow to fill remaining height */
+  gap: 1rem; /* Adds space between main content and sidebar */
+  padding: 1rem;
+}
+
+.main {
+  flex: 2; /* Main content takes more space */
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  flex: 1; /* Sidebar takes less space */
+  background-color: #eaeaea;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .content-area {
+    flex-direction: column; /* Stack the main and sidebar vertically */
+  }
+
+  .main, .sidebar {
+    flex: none;
+    width: 100%; /* Take full width on small screens */
+  }
+}
